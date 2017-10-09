@@ -1,0 +1,28 @@
+{
+  "name": "angular_curso",
+  "version": "1.0.0",
+  "description": "Curso de AngularJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jframosc/angular_curso.git"
+  },
+  "keywords": [
+    "AngularJS",
+    "Curso"
+  ],
+  "author": "jframosc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jframosc/angular_curso/issues"
+  },
+  "homepage": "https://github.com/jframosc/angular_curso#readme",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}
