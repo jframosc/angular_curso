@@ -1,21 +1,11 @@
-angular.module("appModule")
-
-class AppController {
-    $onInit(){
-        this.sCurso='angularjs';
+class MainController {
+    $onInit() {
+     this.sCurso='AngularJS'; 
     }
 }
-
-
-
 angular.module("appModule")
-.controller("AppController", AppController)
 .component('appMain', {
-    templateUrl:'main-partial.html',
+    templateUrl: 'main-partial.html',
     controller: MainController,
-    controllerAs: 'vm',
+    controllerAs: 'vm'
 });
-
-
-
-

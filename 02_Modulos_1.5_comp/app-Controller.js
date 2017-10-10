@@ -1,16 +1,8 @@
-angular.module("appModule")
 
 class AppController {
-    $onInit(){
-        this.sCurso='angularjs';
+    $onInit() {
+     this.sCurso='AngularJS'; 
     }
 }
-
-
-
 angular.module("appModule")
 .controller("AppController", AppController);
-
-
-
-

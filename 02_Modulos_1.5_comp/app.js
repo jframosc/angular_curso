@@ -1,6 +1,3 @@
 
 
-angular.module("appModule",[])
-
-
-
+angular.module("appModule", [])
