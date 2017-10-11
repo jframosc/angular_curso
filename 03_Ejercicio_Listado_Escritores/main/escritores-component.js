@@ -1,6 +1,13 @@
 class EscritoresController {
     
+    constructor($log){
+        'ngInject';
+        this.$log= $log;
+    }
+
     $onInit () {
+        this.$log.debug("Metodo onInit()");
+
         this.aAutores = [
         {	nombre: 'Georges',
             apellido: 'Simenon',
@@ -41,6 +48,7 @@ class EscritoresController {
             {idProvincia:7, nombre:"Teruel"},  
             {idProvincia:5, nombre:"Tarragona"}
             ];
+        
         this.miProvinciaSeleccionada=null;
             
     }
