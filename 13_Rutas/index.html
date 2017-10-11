@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<!-- Ejemplo de AngularJS;
+	... -->
+
+<html lang="es">
+<head>
+	<meta name="keywords" content="web, learning, html5, css3, angularJS">
+	<meta name="author" content="Alejandro" >
+	<meta name="description" content="Ejercicios de angularJS">
+	<meta name="generator" content="Visual Studio Code">
+	<meta charset="UTF-8">
+	<meta base="/">
+	<title>Paises del Mundo</title>
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="icon" href="fav_icon.png">
+</head>
+
+<body ng-app = "appModule" ng-controller= "HomeController as $ctrl">
+	<header>
+		<h1>Rutas</h1>
+	</header>
+	
+	<nav>
+		<ul>
+			<li>
+				<a href="#/view">Inicio</a>
+			</li>
+			<li>
+				<a href="#/view/about">Acerca de</a>
+			</li>
+		</ul>
+	</nav>
+
+	<article>
+		<ul>
+			<p ng-view></p>
+		</ul>
+	</article>
+
+	<footer ng-include=" '../common/_footer.html' "></footer>
+
+	<script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="../node_modules/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="js/appModule.js"></script>
+	<script type="text/javascript" src="js/about-controller.js"></script>
+	<script type="text/javascript" src="js/home-controller.js"></script>
+</body>
+</html>
