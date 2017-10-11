@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Hola Mundo</title>
+        <meta name="description" content="Hola mundo con AngularJS">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="../node_modules/angular/angular.min.js"></script>
+        <script src="./app.js"></script>
+
+    </head>
+    <body ng-app="appModule" ng-controller="ListaController">
+        <label for="idea"> Nueva Idea: </label>
+        <input type="text" id="idea" ng-model="element"></input>
+        <button ng-click="addIdea()">Añadir idea</button>
+
+
+        <div ng-if="lista.length > 0">
+                
+            <h1>Lista Ideas</h1>
+
+                <ul ng-repeat="idea in lista">
+                       <li>
+                           <p>
+                               Idea: {{idea}}
+                           </p>
+                       </li>
+                </ul>
+
+        </div>
+        
+
+    </body>
+</html>

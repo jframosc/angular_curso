@@ -1,0 +1,10 @@
+<p>
+    <!--Titular de noticia <span ng-click="$ctrl.verTexto=!$ctrl.verTexto">{{$ctrl.verTexto ? "Ver menos": "Ver más"}}</span>-->
+
+    Titular de noticia <span ng-mouseover="$ctrl.verTexto=true" ng-mouseleave="$ctrl.verTexto=false">{{$ctrl.verTexto ? "Ver menos": "Ver más"}}</span>
+    <span ng-show="$ctrl.verTexto">Lorem ipsum dolor sir amet</span>
+</p>
+
+<p>
+    El precio es {{ $ctrl.precio | currency}}
+</p>

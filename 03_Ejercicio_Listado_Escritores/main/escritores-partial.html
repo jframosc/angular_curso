@@ -1,0 +1,90 @@
+<form name="myform" ng-submit="enviarFormulario()">
+        
+    <p>
+            <label for="firstname">Name:</label>
+            <input type="text" id="firstname" name="firstname"
+            ng-model="user.firstname" ng-required="true" ng-maxlength="2">
+            
+            <span class="error-message" ng-show="myform.firstname.$dirty && myform.firstname.$error.required">El nombre es obligatorio</span>
+            <span class="error-message" ng-show="myform.firstname.$error.maxlength < 2">El nombre tiene menos de dos caracteres</span>
+    </p>
+      
+    <p>
+            <label for="lastname">Apellidos:</label>
+            <input type="text" id="lastname" name="lastname"
+            ng-model="user.lastname" ng-required="true" ng-minlength="2">
+            
+            <span class="error-message" ng-show="myform.lastname.$dirty && myform.lastname.$error.required">El apellido es obligatorio</span>
+            <span class="error-message" ng-show="myform.lastname.$error.minlength < 2">El apellido tiene menos de dos caracteres</span>
+    </p>
+
+        
+    <p>
+            <label for="phone">Telefono:</label>
+            <input type="text" id="phone" name="phone"
+            ng-model="user.phone" ng-required="true"  ng-pattern="/^\d{9}$/">
+            
+            <span class="error-message" ng-show="myform.phone.$dirty && myform.phone.$error.required">El telefono es obligatorio</span>
+            
+    </p>
+
+    <button type="submit" ng-disabled="!myform.$valid">Enviar</button>
+        
+</form> 
+
+<form>
+        <br/>
+        <br/>
+    
+        <select name="select" ng-model = "miProvinciaSeleccionada" ng-options = "provincia as provincia.nombre for provincia in $ctrl.provincias track by provincia.idProvincia" required> 
+        </select>
+
+        <span class="error-message" ng-show="myform.select.$error.required">Select obligatorio</span>
+
+        <p>
+            <label for="provincia">Provincia seleccionada: </label>
+            <span id="provincia">{{miProvinciaSeleccionada.nombre}}</span>
+        </p>
+
+        <p>
+            <label for="orden">Elije el orden que deseas</label>
+            <select id="orden" ng-model="$ctrl.orden">
+                <option value="nombre">Nombre</option>
+                <option value="apellido">Apellido</option>
+                <option value="pais">Pais</option>
+                <option value="fechaNacim">Fecha de Nacimiento</option>
+            </select>
+        </p>
+        <p>
+            <label for="genero" >Elije el genero literario que deseas</label>
+            <select id="genero" ng-model="$ctrl.genero">
+                <option value="">todos</option>
+                <option value="policiaco">Policiaco</option>
+                <option value="ciencia ficción">Ciencia Ficción</option>
+                <option value="fantástico">Fantástico</option>
+            </select>	        
+        </p>
+        <p><label>Campos a mostrar</label></p>
+        <p>	<label for="pais">Pais</label>
+            <input type="checkbox" id="pais"
+            ng-model="$ctrl.verPais"></p>
+        <p>	<label for="fecha">Fecha de nacimiento</label>
+            <input type="checkbox" id="fecha"
+            ng-model="$ctrl.verFecha"></p>
+
+            
+                    
+    
+    </form>
+        
+    <article>
+        <ul>	
+            <li ng-repeat="oAutor in $ctrl.aAutores | filter: $ctrl.genero | orderBy: $ctrl.orden">
+                <b>{{oAutor.nombre}} {{oAutor.apellido}}</b>				 
+                {{$ctrl.verPais ? ' - ' + oAutor.pais : ''}} 
+                {{$ctrl.verFecha ? '- Nacido en ' + (oAutor.fechaNacim | date:'yyyy') : ''}}
+                - Genero: <span ng-repeat="genero in oAutor.generos">
+                {{ genero }}{{ !$last ? ", " : "."}} <span>
+            </li>
+        </ul>	
+    </article>
